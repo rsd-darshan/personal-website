@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darshan Poudel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            background-color: #fff;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .navbar {
+            background-color: #000;
+            padding: 12px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-right: 25px;
+            font-size: 15px;
+        }
+
+        .navbar a:hover {
+            opacity: 0.7;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 30px;
+            gap: 40px;
+        }
+
+        .sidebar {
+            width: 240px;
+            flex-shrink: 0;
+        }
+
+        .profile-image {
+            width: 160px;
+            height: 160px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .name {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .title {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .contact {
+            font-size: 14px;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .contact strong {
+            display: inline;
+            margin-right: 6px;
+        }
+
+        .contact a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .socials {
+            display: flex;
+            gap: 8px;
+            margin: 12px 0;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .social-link:hover {
+            background-color: #000;
+        }
+
+        .location {
+            font-size: 14px;
+            color: #666;
+            margin-top: 12px;
+        }
+
+        .bio {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+            margin-top: 15px;
+            text-align: justify;
+        }
+
+        .main {
+            flex: 1;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            scroll-margin-top: 80px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .entry {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 22px;
+            align-items: flex-start;
+        }
+
+        .entry-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #f0f0f0;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .entry-content {
+            flex: 1;
+            font-size: 15px;
+        }
+
+        .entry-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .entry-title a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .entry-title a:hover {
+            text-decoration: underline;
+        }
+
+        .entry-subtitle {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+
+        .entry-date {
+            font-size: 14px;
+            color: #999;
+            float: right;
+        }
+
+        .entry-advisor {
+            font-size: 14px;
+            color: #666;
+            margin-top: 6px;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+
+        .advisor-link {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .timeline-item {
+            margin-bottom: 28px;
+        }
+
+        .timeline-year {
+            font-size: 13px;
+            color: #999;
+            margin-top: 6px;
+            font-weight: 500;
+        }
+
+        .paper {
+            margin-bottom: 24px;
+            font-size: 15px;
+        }
+
+        .paper-title {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: #0066cc;
+        }
+
+        .paper-info {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .paper-links {
+            font-size: 14px;
+        }
+
+        .paper-links a {
+            color: #0066cc;
+            text-decoration: none;
+            margin-right: 12px;
+        }
+
+        .archived-header {
+            cursor: pointer;
+            padding: 8px 0;
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .archived-header .toggle {
+            font-size: 13px;
+            margin-left: 8px;
+        }
+
+        .archived-content {
+            display: none;
+        }
+
+        .archived-content.show {
+            display: block;
+        }
+
+        .archived-item {
+            margin-bottom: 18px;
+            font-size: 14px;
+        }
+
+        .archived-title {
+            font-weight: 700;
+            font-size: 15px;
+            margin-bottom: 3px;
+        }
+
+        .archived-title a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .archived-title a:hover {
+            text-decoration: underline;
+        }
+
+        .archived-desc {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .sidebar {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#hackathons">Hackathons</a>
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
+    </div>
+
+    <div class="container">
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <img src="darshanpoudel.jpg" alt="Darshan Poudel" class="profile-image">
+            <div class="name">Darshan Poudel</div>
+            <div class="title">Lifelong machine learning researcher</div>
+
+            <div class="contact">
+                <strong><i class="fas fa-envelope"></i> Email</strong>
+                <a href="mailto:poudeldarshan44@gmail.com">poudeldarshan44@gmail.com</a>
+            </div>
+
+            <div class="socials">
+                <a href="https://github.com/rsd-darshan" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/poudeldarshan/" class="social-link" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/rsd__darshan" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+
+            <div class="location">Canada</div>
+
+            <div class="bio">
+                <strong>Hi!</strong> I'm Darshan, a researcher and builder focused on lifelong machine learning systems. I'm working on continual learning architectures that learn continuously without catastrophic forgetting. I also contribute to open source. <strong>3x International <a href="#hackathons" style="color: #0066cc;">Hackathon</a> Winner.</strong> Feel free to reach out!
+            </div>
+        </div>
+
+        <!-- MAIN -->
+        <div class="main">
+            <!-- EDUCATION -->
+            <div class="section" id="education">
+                <div class="section-title">Education</div>
+
+                <div class="entry">
+                    <div class="entry-icon"><img src="logouniofregina.png" alt="University of Regina" style="width: 100%; height: 100%; object-fit: contain;"></div>
+                    <div class="entry-content">
+                        <div class="entry-title">B.Sc. in Computer Science</div>
+                        <div class="entry-subtitle">University of Regina, Regina, Canada</div>
+                        <div class="entry-advisor">Focus: AI/ML, systems, full-stack development</div>
+                    </div>
+                </div>
+
+                <div class="entry">
+                    <div class="entry-icon"><img src="logomotherland.png" alt="Motherland Secondary School" style="width: 100%; height: 100%; object-fit: contain;"></div>
+                    <div class="entry-content">
+                        <div class="entry-title">High School</div>
+                        <div class="entry-subtitle">Motherland Secondary School, Pokhara, Nepal</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EXPERIENCE -->
+            <div class="section" id="experience">
+                <div class="section-title">Experience</div>
+
+                <div style="margin-bottom: 28px;">
+                    <div style="display: flex; gap: 12px; margin-bottom: 16px; align-items: flex-start;">
+                        <div style="width: 40px; height: 40px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;">
+                            <img src="googlelogo.png" alt="Google" style="width: 100%; height: 100%; object-fit: contain;">
+                        </div>
+                        <div>
+                            <div style="font-size: 14px; font-weight: 600;"><a href="https://github.com/google/syzkaller/pull/7444" style="color: #0066cc; text-decoration: none;">Google</a></div>
+                            <div style="font-size: 12px; color: #666; margin-top: 4px; line-height: 1.6;">
+                                Improved kernel security fuzzing by refining vulnerability classification in syz-agent. Enhanced the system to properly identify which information leaks are truly exploitable, strengthening security testing for kernel developers across organizations.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 28px;">
+                    <div style="display: flex; gap: 12px; margin-bottom: 16px; align-items: flex-start;">
+                        <div style="width: 40px; height: 40px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;">
+                            <img src="anthropiclogo.png" alt="Anthropic" style="width: 100%; height: 100%; object-fit: contain;">
+                        </div>
+                        <div>
+                            <div style="font-size: 14px; font-weight: 600;"><a href="https://github.com/anthropics/buffa/pull/155" style="color: #0066cc; text-decoration: none;">Anthropic</a></div>
+                            <div style="font-size: 12px; color: #666; margin-top: 4px; line-height: 1.6;">
+                                Built a production-ready YAML serialization crate with 23 comprehensive tests. Implemented full protobuf-JSON-YAML mapping with support for all Well-Known Types, integer precision handling, and special scalar resolution. Now integrated into Anthropic's internal infrastructure.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 28px;">
+                    <div style="display: flex; gap: 12px; margin-bottom: 16px; align-items: flex-start;">
+                        <div style="width: 40px; height: 40px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;">
+                            <img src="nvidialogo.png" alt="NVIDIA" style="width: 100%; height: 100%; object-fit: contain;">
+                        </div>
+                        <div>
+                            <div style="font-size: 14px; font-weight: 600;"><a href="https://github.com/NVIDIA/infra-controller/pull/2284" style="color: #0066cc; text-decoration: none;">NVIDIA</a></div>
+                            <div style="font-size: 12px; color: #666; margin-top: 4px; line-height: 1.6;">
+                                Optimized enterprise infrastructure health reporting by implementing intelligent report suppression. Reduced unnecessary API traffic by filtering duplicate success-only reports within configurable intervals while maintaining alert responsiveness. Measurable performance improvement for large-scale infrastructure.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 28px;">
+                    <div style="display: flex; gap: 12px; margin-bottom: 16px; align-items: flex-start;">
+                        <div style="width: 40px; height: 40px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;">
+                            <img src="unslothlogo.jpeg" alt="Unsloth" style="width: 100%; height: 100%; object-fit: contain; border-radius: 50%;">
+                        </div>
+                        <div>
+                            <div style="font-size: 14px; font-weight: 600;"><a href="https://github.com/unslothai/unsloth/pull/5602" style="color: #0066cc; text-decoration: none;">Unsloth AI</a></div>
+                            <div style="font-size: 12px; color: #666; margin-top: 4px; line-height: 1.6;">
+                                Fixed critical XSS vulnerability in Studio markdown renderer where model-emitted image tags were loading from external URLs, leaking user IP addresses and browser metadata. Implemented content security filtering to allow only safe image sources while preserving legitimate inline content.
+                            </div>
+                            <div style="font-size: 12px; color: #999; margin-top: 8px;">
+                                Active contributor across 13+ repositories including Microsoft, Kestra, OpenHands, and others.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- PUBLICATIONS SECTION -->
+    <div style="max-width: 1100px; margin: 0 auto; padding: 30px;">
+        <div class="section" id="publications">
+                <div class="section-title">Research Papers</div>
+
+                <div class="paper">
+                    <div class="paper-title">ARIA: Adaptive Recurrent Intelligence Architecture</div>
+                    <div class="paper-info">Darshan Poudel | 2026 | Preprint</div>
+                    <div class="paper-links">
+                        <a href="https://github.com/rsd-darshan/ARIA">Code</a>
+                        <a href="aria.pdf">PDF</a>
+                        <a href="https://github.com/rsd-darshan/ARIA">Paper</a>
+                    </div>
+                </div>
+
+                <div class="paper">
+                    <div class="paper-title">NCG: Novelty-triggered Capacity Growth for Continual Learning</div>
+                    <div class="paper-info">Darshan Poudel | 2025 | Research Repository</div>
+                    <div class="paper-links">
+                        <a href="https://github.com/rsd-darshan/NCG">Code</a>
+                        <a href="NCG.pdf">Paper</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROJECTS SECTION (Full Width Below) -->
+    <div style="max-width: 1100px; margin: 0 auto; padding: 30px;">
+        <div class="section" id="projects">
+            <div class="section-title">Projects</div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="entry-title"><a href="https://github.com/rsd-darshan/ARIA" style="color: inherit; text-decoration: none;">ARIA — Adaptive Recurrent Intelligence Architecture</a></div>
+                        <div class="entry-subtitle">Continual learning architecture preventing catastrophic forgetting</div>
+                        <div class="timeline-year">2026 | Python, PyTorch | Research prototype</div>
+                        <div class="entry-advisor" style="margin-top: 8px;">
+                            A novel continual learning architecture that addresses catastrophic forgetting through dynamic adaptive mechanisms. Achieves 98.5% accuracy on Split-MNIST with only 0.86% forgetting rate. Core innovations include dynamic head splitting for task-specific pathways, plasticity-gated mechanisms to regulate learning, and selective slow-pathway consolidation for stable knowledge retention. Validated with multi-seed benchmarking and comprehensive ablation studies. Full research paper and reproducible implementation available.
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="entry-title"><a href="https://github.com/rsd-darshan/DuckAI" style="color: inherit; text-decoration: none;">DuckAI</a></div>
+                        <div class="entry-subtitle">AI sidebar that reads your screen for context</div>
+                        <div class="timeline-year">2026 | Electron, React, FastAPI, Python | Active</div>
+                        <div class="entry-advisor" style="margin-top: 8px;">
+                            A cross-platform AI sidebar that operates continuously in the background, providing real-time contextual assistance by analyzing your current screen and work context. Built with Electron for desktop integration, React for responsive UI, and FastAPI backend for intelligent processing. Seamlessly understands the application, document, or task you're currently working on, enabling context-aware suggestions, summaries, and assistance without requiring manual input or switching applications. Perfect for developers, writers, and knowledge workers.
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="entry-title"><a href="https://github.com/rsd-darshan/FieldSense" style="color: inherit; text-decoration: none;">FieldSense</a></div>
+                        <div class="entry-subtitle">Agricultural ML platform for crop optimization</div>
+                        <div class="timeline-year">2025 | Flask, scikit-learn, PyTorch, ONNX | Live</div>
+                        <div class="entry-advisor" style="margin-top: 8px;">
+                            An intelligent agricultural decision-support platform that leverages machine learning to optimize farming outcomes. Provides data-driven crop recommendations based on soil conditions, weather patterns, and historical yields. Implements fertilizer optimization algorithms to reduce costs while maintaining productivity. Includes computer vision-based leaf disease detection for early intervention. Exposes all capabilities through a production-ready REST API with explainable AI outputs showing reasoning behind recommendations, complete audit trail for compliance, and persistent history tracking. Currently deployed with live demonstrations.
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="entry-title"><a href="https://github.com/rsd-darshan/NCG" style="color: inherit; text-decoration: none;">NCG — Novelty-triggered Capacity Growth</a></div>
+                        <div class="entry-subtitle">Self-regulating continual learning framework</div>
+                        <div class="timeline-year">2025 | Python, PyTorch | Research implementation</div>
+                        <div class="entry-advisor" style="margin-top: 8px;">
+                            A self-regulating continual learning framework that autonomously expands neural network capacity only when necessary, preventing both catastrophic forgetting and unnecessary over-parameterization. Uses novelty detection signals to identify when existing model capacity is insufficient for new tasks. Employs learnable meta-parameters to control capacity growth dynamically. Integrates gated knowledge memory mechanisms to selectively consolidate and retrieve learned information. Particularly effective for scenarios with streaming data and non-stationary task distributions. Research-grade implementation with full reproducibility.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HACKATHONS SECTION -->
+    <div style="max-width: 1100px; margin: 0 auto; padding: 30px;">
+        <div class="section" id="hackathons">
+            <div class="section-title">Hackathons</div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="entry-title"><a href="https://virtu-hack.devpost.com" style="color: inherit; text-decoration: none;">Virtu Hack — Winner</a></div>
+                    <div class="entry-subtitle">Project: <a href="https://devpost.com/software/linku-v4f5hs" style="color: #0066cc; text-decoration: none;">LinkU</a></div>
+                    <div class="timeline-year">2024 | TypeScript, React, Node.js, PostgreSQL, Stripe | Winner</div>
+                    <div class="entry-advisor" style="margin-top: 8px;">
+                        Advanced version of the student-to-mentor platform connecting college students with qualified advisors for personalized admissions guidance and career mentorship. Features intelligent ML-based mentor discovery and matching algorithms, bookable one-on-one sessions, direct messaging for ongoing communication, integrated in-app video conferencing, university-specific feeds for institutional insights, and AI-powered college admissions analysis. Built with production-grade full-stack architecture including real-time capabilities via Agora, secure payment processing through Stripe, and user authentication via Clerk.
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="entry-title"><a href="https://coderush1.devpost.com" style="color: inherit; text-decoration: none;">Code Rush — Winner</a></div>
+                    <div class="entry-subtitle">Project: <a href="https://devpost.com/software/linku-v4f5hs" style="color: #0066cc; text-decoration: none;">LinkU</a></div>
+                    <div class="timeline-year">2024 | TypeScript, React, Node.js, PostgreSQL, Stripe | Winner</div>
+                    <div class="entry-advisor" style="margin-top: 8px;">
+                        Evolved mentor-student connectivity platform with enhanced features for college admissions support. This iteration builds upon the original concept with refined mentor matching powered by machine learning algorithms, seamless session booking and scheduling, real-time communication tools including video calls, university-specific content feeds providing targeted institutional information, and intelligent AI-assisted college admissions analysis. Demonstrates production-ready software engineering with secure payment integration, robust authentication systems, scalable architecture, and focus on user experience.
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="entry-title"><a href="https://student-hacks-.devpost.com" style="color: inherit; text-decoration: none;">Student Hacks — Winner</a></div>
+                    <div class="entry-subtitle">Project: <a href="https://devpost.com/software/campusconnect-campusguider" style="color: #0066cc; text-decoration: none;">CampusConnect</a> (Early Version)</div>
+                    <div class="timeline-year">2024 | TypeScript, React, Node.js, PostgreSQL | Winner</div>
+                    <div class="entry-advisor" style="margin-top: 8px;">
+                        The original prototype of what became LinkU. This version established the core concept of connecting college students with mentors for admissions guidance and career support. Implemented fundamental features including mentor discovery, session scheduling, direct messaging, and university-specific feeds. This hackathon submission validated the market need and demonstrated the viability of the platform concept, leading to its evolution into the more feature-rich LinkU platform with additional capabilities like ML-powered matching, in-app video, payment processing, and AI-assisted analysis.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ARCHIVED PROJECTS SECTION -->
+    <div style="max-width: 1100px; margin: 0 auto; padding: 30px;">
+        <div class="section">
+            <div class="section-title">Archived Projects</div>
+
+                <div class="archived-header" onclick="toggleArchived()">
+                    <span>Projects from high school & early learning</span>
+                    <span class="toggle" id="toggle-arrow">▼</span>
+                </div>
+
+                <div class="archived-content" id="archived-content">
+                    <div class="archived-item">
+                        <div class="archived-title"><a href="https://github.com/rsd-darshan/LinkU" style="color: inherit; text-decoration: none;">LinkU</a></div>
+                        <div class="archived-desc">Student-to-mentor platform connecting college students with advisors for admissions guidance. Built with full-stack web tech (TypeScript, React, Node.js, PostgreSQL, Stripe).</div>
+                    </div>
+
+                    <div class="archived-item">
+                        <div class="archived-title"><a href="https://github.com/rsd-darshan/FunFusion" style="color: inherit; text-decoration: none;">FunFusion</a></div>
+                        <div class="archived-desc">30 mini-games packed into 2MB. Explored game design, optimization, and UX. Shows what you can build when you focus on constraints.</div>
+                    </div>
+
+                    <div class="archived-item">
+                        <div class="archived-title"><a href="https://github.com/rsd-darshan/MeroKitab" style="color: inherit; text-decoration: none;">MeroKitab</a></div>
+                        <div class="archived-desc">Used books marketplace. Connected buyers and sellers in Nepal. Built with TypeScript and modern web stack.</div>
+                    </div>
+
+                    <div class="archived-item">
+                        <div class="archived-title"><a href="https://github.com/rsd-darshan/GharBari" style="color: inherit; text-decoration: none;">GharBari</a></div>
+                        <div class="archived-desc">E-commerce platform for groceries and household essentials. Focused on making affordable shopping accessible across Nepal.</div>
+                    </div>
+
+                    <div class="archived-item">
+                        <div class="archived-title"><a href="https://github.com/rsd-darshan/RoutRover" style="color: inherit; text-decoration: none;">RoutRover</a></div>
+                        <div class="archived-desc">Real-time bus tracking system. Solved the "when is my bus coming" problem with live location tracking and ETAs.</div>
+                    </div>
+
+                    <div class="archived-item">
+                        <div class="archived-title"><a href="https://github.com/rsd-darshan/MediaScout" style="color: inherit; text-decoration: none;">MediaScout</a></div>
+                        <div class="archived-desc">Tool to discover and download free stock photos and videos. Made creative asset discovery faster and easier.</div>
+                    </div>
+
+                    <div class="archived-item">
+                        <div class="archived-title"><a href="https://github.com/rsd-darshan/AlgoLearn" style="color: inherit; text-decoration: none;">AlgoLearn</a></div>
+                        <div class="archived-desc">CS education platform with tutorials and exercises. Believed you could teach algorithms better than traditional resources.</div>
+                    </div>
+
+                    <div class="archived-item">
+                        <div class="archived-title"><a href="https://github.com/rsd-darshan/RepoExplorer" style="color: inherit; text-decoration: none;">RepoExplorer</a></div>
+                        <div class="archived-desc">Advanced GitHub repository search tool with smart filters. Made finding relevant open source projects easier.</div>
+                    </div>
+
+                    <div class="archived-item">
+                        <div class="archived-title"><a href="https://github.com/rsd-darshan/Template-Explorer" style="color: inherit; text-decoration: none;">Template-Explorer</a></div>
+                        <div class="archived-desc">Website template browser. Browse and download templates from GitHub with preview functionality.</div>
+                    </div>
+
+                    <div class="archived-item">
+                        <div class="archived-title"><a href="https://github.com/rsd-darshan/RepoGenie" style="color: inherit; text-decoration: none;">RepoGenie</a></div>
+                        <div class="archived-desc">AI-powered project setup assistant. Automated repository cloning, dependency installation, and configuration.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        function toggleArchived() {
+            const content = document.getElementById('archived-content');
+            const arrow = document.getElementById('toggle-arrow');
+
+            content.classList.toggle('show');
+            arrow.textContent = content.classList.contains('show') ? '▲' : '▼';
+        }
+    </script>
+</body>
+</html>

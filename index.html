@@ -390,10 +390,10 @@
                             <img src="googlelogo.png" alt="Google" style="width: 100%; height: 100%; object-fit: contain;">
                         </div>
                         <div>
-                            <div style="font-size: 14px; font-weight: 600;"><a href="https://github.com/google/syzkaller/pull/7444" style="color: #0066cc; text-decoration: none;">Google</a></div>
+                            <div style="font-size: 14px; font-weight: 600;"><a href="https://github.com/google/syzkaller/pull/7666" style="color: #0066cc; text-decoration: none;">Google</a></div>
                             <div style="font-size: 12px; color: #999; margin-top: 2px;">Open Source Contribution | Syzkaller</div>
                             <div style="font-size: 12px; color: #666; margin-top: 4px; line-height: 1.6;">
-                                Improved kernel security fuzzing by refining vulnerability classification in syz-agent. Enhanced the system to properly identify which information leaks are truly exploitable, strengthening security testing for kernel developers across organizations.
+                                Fixed musl build incompatibility by adding pkey syscall compatibility shims. Implemented platform-specific solutions for pkey_alloc, pkey_free, and pkey_mprotect across musl/glibc and amd64/arm64 architectures, enabling executor builds on Alpine Linux and other musl-based systems.
                             </div>
                         </div>
                     </div>
@@ -405,10 +405,10 @@
                             <img src="anthropiclogo.png" alt="Anthropic" style="width: 100%; height: 100%; object-fit: contain;">
                         </div>
                         <div>
-                            <div style="font-size: 14px; font-weight: 600;"><a href="https://github.com/anthropics/buffa/pull/155" style="color: #0066cc; text-decoration: none;">Anthropic</a></div>
+                            <div style="font-size: 14px; font-weight: 600;"><a href="https://github.com/anthropics/buffa/pull/251" style="color: #0066cc; text-decoration: none;">Anthropic</a></div>
                             <div style="font-size: 12px; color: #999; margin-top: 2px;">Open Source Contribution | Buffa</div>
                             <div style="font-size: 12px; color: #666; margin-top: 4px; line-height: 1.6;">
-                                Built a production-ready YAML serialization crate with 23 comprehensive tests. Implemented full protobuf-JSON-YAML mapping with support for all Well-Known Types, integer precision handling, and special scalar resolution. Now integrated into Anthropic's internal infrastructure.
+                                Designed and implemented buffa-remote-derive macro crate enabling foreign types as custom field types. 1,317-line feature spanning 22 files with sophisticated two-tier trait design (ProtoString, ProtoBytes, ProtoList, ProtoBox, MapStorage) and comprehensive integration tests against real types.
                             </div>
                         </div>
                     </div>
@@ -423,7 +423,7 @@
                             <div style="font-size: 14px; font-weight: 600;"><a href="https://github.com/NVIDIA/infra-controller/pull/2284" style="color: #0066cc; text-decoration: none;">NVIDIA</a></div>
                             <div style="font-size: 12px; color: #999; margin-top: 2px;">Open Source Contribution | infra-controller</div>
                             <div style="font-size: 12px; color: #666; margin-top: 4px; line-height: 1.6;">
-                                Optimized enterprise infrastructure health reporting by implementing intelligent report suppression. Reduced unnecessary API traffic by filtering duplicate success-only reports within configurable intervals while maintaining alert responsiveness. Measurable performance improvement for large-scale infrastructure.
+                                Implemented intelligent health report suppression with time-based caching and content hashing. Per-key deduplication skips unchanged success-only reports while preserving alert forwarding, reducing unnecessary API traffic for stable machines while maintaining system responsiveness.
                             </div>
                         </div>
                     </div>
@@ -536,7 +536,7 @@
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <div class="entry-title"><a href="https://virtu-hack.devpost.com" style="color: inherit; text-decoration: none;">Virtu Hack — Winner</a></div>
+                    <div class="entry-title"><a href="https://virtu-hack.devpost.com" style="color: #0066cc; text-decoration: none;">Virtu Hack — Winner</a></div>
                     <div class="entry-subtitle">Project: <a href="https://devpost.com/software/linku-v4f5hs" style="color: #0066cc; text-decoration: none;">LinkU</a></div>
                     <div class="timeline-year">2024 | TypeScript, React, Node.js, PostgreSQL, Stripe | Winner</div>
                     <div class="entry-advisor" style="margin-top: 8px;">
@@ -546,7 +546,7 @@
 
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <div class="entry-title"><a href="https://coderush1.devpost.com" style="color: inherit; text-decoration: none;">Code Rush — Winner</a></div>
+                    <div class="entry-title"><a href="https://coderush1.devpost.com" style="color: #0066cc; text-decoration: none;">Code Rush — Winner</a></div>
                     <div class="entry-subtitle">Project: <a href="https://devpost.com/software/linku-v4f5hs" style="color: #0066cc; text-decoration: none;">LinkU</a></div>
                     <div class="timeline-year">2024 | TypeScript, React, Node.js, PostgreSQL, Stripe | Winner</div>
                     <div class="entry-advisor" style="margin-top: 8px;">
@@ -556,7 +556,7 @@
 
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <div class="entry-title"><a href="https://student-hacks-.devpost.com" style="color: inherit; text-decoration: none;">Student Hacks — Winner</a></div>
+                    <div class="entry-title"><a href="https://student-hacks-.devpost.com" style="color: #0066cc; text-decoration: none;">Student Hacks — Winner</a></div>
                     <div class="entry-subtitle">Project: <a href="https://devpost.com/software/campusconnect-campusguider" style="color: #0066cc; text-decoration: none;">CampusConnect</a> (Early Version)</div>
                     <div class="timeline-year">2024 | TypeScript, React, Node.js, PostgreSQL | Winner</div>
                     <div class="entry-advisor" style="margin-top: 8px;">
